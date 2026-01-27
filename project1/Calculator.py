@@ -1,3 +1,21 @@
+"""
+Project 1: Calculator
+
+Milestones
+    Take user input
+    Support + - * /
+    Handle invalid input (division by zero)
+
+Stretch Goals
+    Add exponent & modulo
+    Support continuous calculations
+    Refactor using functions
+
+You’ll Learn
+    Functions
+    try/except
+    Control flow
+"""
 
 def get_integer_input(prompt: str) -> float:
     while True:

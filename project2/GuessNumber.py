@@ -37,7 +37,7 @@ def get_max_attempts(level: int) -> int:
         raise ValueError("Invalid difficulty level.")
     
 def save_score(level: int, attempts: int, result: str) -> None:
-    with open("scores.txt", "a") as file:
+    with open("project2/scores.txt", "a") as file:
         file.write(f"Level: {level}, Attempts: {attempts}, Result: {result}\n")
 
 

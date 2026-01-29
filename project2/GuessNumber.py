@@ -9,7 +9,7 @@ Milestones
 Stretch Goals
     Difficulty levels
     Limited attempts
-    Score tracking
+    Score tracking to file
 
 You’ll Learn
     Loops
@@ -17,6 +17,7 @@ You’ll Learn
     Game logic
 '''
 import random
+
 def get_difficulty_level() -> int:
     while True:
         level = input("Choose difficulty level - Easy (1), Medium (2), Hard (3): ").strip()
@@ -34,6 +35,12 @@ def get_max_attempts(level: int) -> int:
         return 5
     else:
         raise ValueError("Invalid difficulty level.")
+    
+def save_score(level: int, attempts: int, result: str) -> None:
+    with open("scores.txt", "a") as file:
+        file.write(f"Level: {level}, Attempts: {attempts}, Result: {result}\n")
+
+
 def main():
     print("Welcome to the Number Guessing Game!")
     level = get_difficulty_level()
@@ -59,9 +66,11 @@ def main():
             print("Too high!")
         else:
             print(f"Congratulations! You've guessed the number {number_to_guess} in {attempts} attempts.")
+            save_score(level, attempts, "Win")
             break
     else:
         print(f"Sorry, you've used all your attempts. The number was {number_to_guess}.")
+        save_score(level, attempts, "Lose")
 
 if __name__ == "__main__":
     main()

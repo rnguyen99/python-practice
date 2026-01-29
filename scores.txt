@@ -1,0 +1,2 @@
+Level: 2, Attempts: 6, Result: Win
+Level: 3, Attempts: 5, Result: Lose
